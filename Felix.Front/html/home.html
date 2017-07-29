@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products tab</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../styles/Navigation.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../scripts/show-products.js"></script>
+    <script type="text/javascript" src="../scripts/create-product.js"></script>
+    <script type="text/javascript" src="../scripts/showProductView.js"></script>
+    <script type="text/javascript" src="../scripts/showVars.js"></script>
+    <script type="text/javascript" src="../scripts/Login.js"></script>
+</head>
+<body>
+
+<!--Start of top navigation-->
+<div class="topnav" id="myTopnav">
+    <a href="#" onclick=initVeiws()>Home</a>
+    <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+    <a href="#">Create Deal</a>
+    <a href="#" onclick=showVarsTab()>Products</a>
+    <a href="#">Logout</a>
+
+</div>
+<!--End of top navigation-->
+<div class="centered-wrapper">
+    <div id="vars-area">
+        <button id="to-product">Products</button>
+        <button id="to-buyer">Buyers</button>
+        <button id="to-consignee">Consignees</button>
+        <button id="to-countries">Countries</button>
+        <button id="to-formulations">Fomulations</button>
+        <button id="to-packages">Package</button>
+
+        <div id="product-tab">
+            <h2> Product tab</h2>
+            <button id="browse-product" onclick=showProducts()>Show Products</button>
+            <button id="create-product" onclick=createProduct()>Create Products</button>
+        </div>
+
+        <div id="buyer-tab">
+            <h2> Buyer tab</h2>
+            <button id="browse-buyer" onclick=showBuyers()>Show Buyers</button>
+            <button id="create-buyer" onclick=createBuyer()>Create Buyer</button>
+        </div>
+
+        <div id="consegnee-tab">
+            <h2> Consignee tab</h2>
+            <button id="browse-consegnee" onclick=showConsignees()>Show Consignees</button>
+            <button id="create-consegnee" onclick=createConsignee()>Create Consignee</button>
+        </div>
+
+        <div id="country-tab">
+            <h2> Country tab</h2>
+            <button id="browse-coutry" onclick=showContries()>Show Countries</button>
+            <button id="create-coutry" onclick=createCountry()>Create Country</button>
+        </div>
+
+        <div id="formulation-tab">
+            <h2> Formulation tab</h2>
+            <button id="browse-formulations" onclick=showFormulations()>Show Formulation</button>
+            <button id="create-formulation" onclick=createFormulation()>Create formulation</button>
+        </div>
+
+        <div id="packages-tab">
+            <h2> Package tab</h2>
+            <button id="browse-packages" onclick=showPackages()>Show Packages</button>
+            <button id="create-package" onclick=createPackages()>Create Formulation</button>
+        </div>
+    </div>
+
+    <div id="create-section" class="form-control" >
+        <label for="productName">1</label>
+        <input type="text" id="productName" name="productName">
+        <button class="btn btn-success" type="submit" onclick="create()">Create</button>
+        <p id="result"></p>
+    </div>
+    <div id="show-section" >
+        <ul>
+        </ul>
+    </div>
+
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+                <form>
+                    <input type="text" name="user" placeholder="Username">
+                    <input type="password" name="pass" placeholder="Password">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="Login()">
+                </form>
+
+            </div>
+        </div>
+    </div>
+<script>window.onload=function () {
+    initVeiws();
+}</script>
+</div>
+</body>
+</html>
